@@ -1,0 +1,5 @@
+# Virginia Voter Eligiblity Streamlit App
+App to help people with felony convictions know whether they are eligible to vote after a court ruling in January 2026 stated that voting rights can no longer be taken away for crimes that were not common law in 1870. This tool provides the ability to easily search the *What are the applicable common law felonies?* PDFs from the  [Felony Convictions and Voter Eligibility](https://www.elections.virginia.gov/registration/felony-convictions-and-voter-eligibility/) site of the Virginia Department of Elections. These documents indicate which crimes were common law in 1870 (still cannot vote) and which require further review after a voter tries to register. Voting rights for convictions cannot be taken away for all other crimes and anyone who previously had their rights taken away for these crimes has had their voting rights restored.
+
+## See App Here
+https://va-voter-eligibility.streamlit.app/

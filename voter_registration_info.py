@@ -2,7 +2,15 @@ import re
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(layout='wide')
+st.set_page_config(
+    page_title="VA Voter Eligibility",
+    page_icon=':material/how_to_vote:',  #"☑️",
+    initial_sidebar_state="auto",
+    layout = 'wide',
+    menu_items={
+        'Report a Bug': "mailto:openpolicedata@gmail.com"
+    }
+)
 
 def get_search_terms(df):
     words = set()
@@ -27,7 +35,6 @@ def get_table():
 
     return df
 
-# TODO: Say something about Fairfax NAACP?
 with st.sidebar:
     st.header("Are you a VA resident and convicted of a felony? Based on a recent court ruling, you may now be eligible to vote!")
     st.subheader("**[In January, a federal judge ordered widespread voting rights restoration for Virginians convicted of a felony](https://www.vpm.org/news/2026-01-29/federal-judge-va-voting-rights-king-johnson-gibney-aclu-readmission-act-1870)**")
@@ -36,26 +43,29 @@ with st.sidebar:
                 "- If you were not convicted of one of these crimes and are 18 or older, you may register to vote\n"+
                 "- No need to apply for restoration of rights from the Governor ")
     
-    st.warning("Add comment about constitutional amendment!!!")
+    st.warning("**DON'T FORGET!: If the "+\
+               "[Voting Rights Restoration Constitutional Amendment](https://fairelectionscenter.org/advocacy/virginia-voting-rights-restoration/) "+
+               "passes this November, the right to vote will be restored to ALL Virginians who have been convicted of a felony (except when they are incarcerated "
+               "for that felony).\n\nIf you cannot register now, you will be able to if and when the amendment passes.")
     
 st.info("The below tool can help you determine if the "+
         "[Virginia Department of Elections](https://www.elections.virginia.gov/registration/felony-convictions-and-voter-eligibility/)"
         " has declared that you are eligible to vote.\n\n"+
         "**You are eligible to vote if:**\n\n"+
         '1. The felony(s) that you are convicted of is **NOT** in the below list **OR**\n'+
-        '2. The felony(s) that you are convicted of are labeled "Requires Additional Evaluation"\n\n'+
+        '2. The felony(s) that you are convicted of is labeled "**YES with Additional Evaluation**" below\n\n'+
         'If your felony conviction requires additional evaluation or it was not a Virginia state conviction, your local general registrar will send you a supplemental form for more information after you submit a voter registration application.'
         )
+
+st.header("[Register to VOTE Here!](https://www.elections.virginia.gov/registration/how-to-register/)")
 
 df = get_table()
 
 col1, col2 = st.columns(2)
 
-print('statute' in st.session_state)
 if 'statute' in st.session_state and len(st.session_state['statute'])>0:
     df = df[df['Statute'].isin(st.session_state['statute'])]
 
-print('search' in st.session_state)
 if 'search' in st.session_state and len(st.session_state['search'])>0:
     for s in st.session_state['search']:
         df = df[df['Name'].str.lower().str.contains(s) | df['Description'].str.lower().str.contains(s)]
@@ -83,10 +93,7 @@ st.markdown("Based on *What are the applicable common law felonies?* PDFs from t
             "[Felony Convictions and Voter Eligibility](https://www.elections.virginia.gov/registration/felony-convictions-and-voter-eligibility/) "+
             'site of the Virginia Department of Elections.')
 
-# TODO: Make comment about constitutional amendment
-# TODO: Add text if there are 0 results
-# TODO: Link to voter registration page
-# TODO: Re-iterate source at bottom
-# TODO: Add README
+st.markdown("Please [email](mailto:openpolicedata@gmail.com) if there are any issues with this site or questions about voting.")
+
 # TODO: Add mobile mode
-# TODO: Add link to Streamlit app in README
+# TODO: Say something about Fairfax NAACP?
