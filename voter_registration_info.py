@@ -19,9 +19,11 @@ def get_search_terms(df):
         for c in col:
             words.update([x.lower() for x in re.split(r'\s|/', c.replace(',','').replace('.','').replace(')','').replace('(',''))])
 
-    words-=set(['or','the','of','etc','thereto','do','to','and'])
+    words-=set(['or','the','of','etc','thereto','do','to','and','an','a','as','in','ina','where','such','act','more','by','than','those',
+                'was','from','with','on','when','not','vic'])
     not_allowed = ['>','=','<','&']
     words = set(x for x in words if len(x)>1 and not re.search(r'\d', x) and not any(y in x for y in not_allowed) and "'" not in x)
+    words = [x[1:] if x[0]=='-' else x for x in words]
     words = list(words)
     words.sort()
 
