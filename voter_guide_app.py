@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 
 st.set_page_config(
@@ -9,6 +10,9 @@ st.set_page_config(
         'Report a Bug': "mailto:voting_guide@pm.me"
     }
 )
+
+if pd.Timestamp.now() < pd.Timestamp('2026-09-05 13:00:00'):
+    st.error('Learn more and get help registering with **Fairfax County NAACP at Sherwood Library on September 5 from 10 AM to 1 PM** ')
 
 pg = st.navigation([st.Page("1_intro.py", title='FAQ'), st.Page('2_eligibility.py', title='Eligibility')], position='top')
 pg.run()
