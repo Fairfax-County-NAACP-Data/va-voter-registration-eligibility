@@ -31,7 +31,7 @@ def get_table():
 st.info("The below tool can help you determine if the "+
         "[Virginia Department of Elections"
         " has declared that you are eligible to vote](https://www.elections.virginia.gov/registration/felony-convictions-and-voter-eligibility/).")
-st.subheader("You are eligible to vote if you meet the [basic criteria]"+
+st.subheader("You are eligible to vote in Virginia if you meet the [basic criteria]"+
         "(https://www.elections.virginia.gov/registration/how-to-register/https://www.elections.virginia.gov/registration/how-to-register/) "+
         "(over 18, U.S. citizen, resident of VA, etc.) AND:\n\n")
 st.markdown(

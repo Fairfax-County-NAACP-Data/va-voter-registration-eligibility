@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header('Guide to Registering to Vote with a Felony Conviction')
+st.header('Guide to Registering to Vote with a Felony Conviction in Virginia')
 st.info('**Did you know that after a recent [court ruling](https://www.vpm.org/news/2026-01-29/federal-judge-va-voting-rights-king-johnson-gibney-aclu-readmission-act-1870),'+
         ' many people with felony convictions can register to vote RIGHT NOW in Virginia for the 2026 election?**')
 
@@ -29,10 +29,10 @@ answers = [
         "- Virginia can no longer take away the right to vote for drug crimes and MANY other felonies\n"+
         "- If you were not convicted of one of these crimes and meet the general eligibility criteria, you may register to vote\n"+
         "- No need to apply for restoration of rights from the Governor if felony conviction was not common law in 1870",
-    'No, the court ruling has an *immediate* effect and is in place for people to vote in the 2026 Elections. There are '+
-        '[3 constitutional amendments on the ballot in November]'
+    'No, the court ruling has an *immediate* effect and is in place for people to vote in the 2026 Elections. In November, there are '+
+        '[3 constitutional amendments on the ballot] '
         '(https://virginiaindependentnews.com/politics/virginia-voters-will-decide-3-ballot-measures-in-november-general-election/) '+
-        'that you can vote on in November if you are eligible to vote. If it passes, one of them states that a person convicted of a felony '+
+        'that you will be able to vote on if you are eligible. If it passes, one of them states that a person convicted of a felony '+
         '"[upon release from incarceration for that felony conviction and without further action required of him, such person shall be invested '+
         'with all political rights, including the right to vote](https://lis.virginia.gov/bill-details/20251/HJ2)."',
     None,
