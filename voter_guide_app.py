@@ -1,5 +1,7 @@
 import pandas as pd
 import streamlit as st
+import datetime
+from streamlit_gsheets import GSheetsConnection
 
 st.set_page_config(
     page_title="VA Voter Registration Guide",
@@ -10,6 +12,15 @@ st.set_page_config(
         'Report a Bug': "mailto:voting_guide@pm.me"
     }
 )
+
+if 'v' in st.query_params:
+    st.cache_data.clear()
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    df = conn.read()
+    new_row = pd.DataFrame({'Date':[pd.Timestamp.now(datetime.timezone.utc)], 'Version':[st.query_params["v"]]})
+    df = pd.concat([df, new_row]) if len(df)>0 else new_row
+    conn.update(data=df)
+
 
 if pd.Timestamp.now() < pd.Timestamp('2026-09-05 13:00:00'):
     st.error('Learn more and get help registering to vote with **Fairfax County NAACP at Sherwood Library on September 5 from 10 AM to 1 PM**.'
