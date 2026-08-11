@@ -33,7 +33,7 @@ st.info("The below tool can help you determine if the "+
         " has declared that you are eligible to vote](https://www.elections.virginia.gov/registration/felony-convictions-and-voter-eligibility/).")
 st.subheader("You are eligible to vote in Virginia if you meet the [basic criteria]"+
         "(https://www.elections.virginia.gov/registration/how-to-register/https://www.elections.virginia.gov/registration/how-to-register/) "+
-        "(over 18, U.S. citizen, resident of VA, etc.) AND:\n\n")
+        "(over 18, U.S. citizen, resident of VA, etc.) AND for those who have a felony conviction:\n\n")
 st.markdown(
         '1. The felony(s) that you are convicted of is **NOT** in the below list **OR**\n'+
         '2. The felony(s) that you are convicted of is labeled "**YES with Additional Evaluation**" below\n\n'+
