@@ -37,7 +37,7 @@ st.subheader("You are eligible to vote in Virginia if you meet the [basic criter
 st.markdown(
         '1. The felony(s) that you are convicted of is **NOT** in the below list **OR**\n'+
         '2. The felony(s) that you are convicted of is labeled "**YES with Additional Evaluation**" below\n\n'+
-        'If your felony conviction requires additional evaluation or it was not a Virginia state conviction, your local general registrar will' +
+        'If your felony conviction requires additional evaluation or it was not a Virginia state conviction, your local general registrar will ' +
         'send you a supplemental form for more information after you submit a voter registration application.'
         )
 
