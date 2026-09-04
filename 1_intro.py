@@ -4,7 +4,7 @@ import streamlit as st
 st.header('Virginia Voter Registration Guide')
 st.info('**Did you know that after a recent '
         '[court victory](https://www.vpm.org/news/2026-01-29/federal-judge-va-voting-rights-king-johnson-gibney-aclu-readmission-act-1870),'+
-        ' the right to vote has been restored in Virginia to many people with a felony conviction?** Find out more below!')
+        ' the right to vote has been restored in Virginia to many people with a felony conviction?** Find out more below and check out the [Campaign Legal Center Factsheet](https://campaignlegal.org/document/know-your-rights-voting-felony-conviction-virginia)!')
 
 questions = [
     "How do I register to vote?",
@@ -32,7 +32,7 @@ answers = [
             'vote.',
     'The court ruling states the ONLY people INELIGIBLE to vote are those convicted of the following: '
         '"[arson, burglary, escape or rescue from jail, larceny, manslaughter, mayhem, murder, rape, robbery, sodomy or suicide]'
-        '(https://virginiamercury.com/2026/08/20/judge-affirms-ruling-in-favor-of-former-felons-in-voting-rights-lawsuit/)".\n\n'
+        '(https://virginiamercury.com/2026/08/20/judge-affirms-ruling-in-favor-of-former-felons-in-voting-rights-lawsuit/)". According to the [Campaign Legal Center](https://campaignlegal.org/document/know-your-rights-voting-felony-conviction-virginia), "to determine whether you are eligible to vote, you should fill out the voter registration form, and Virginia election officials will determine your eligibility if you are not convicted of one of those crimes, you are eligible to vote."\n\n'
         'When registering to vote, mark YES on the form that you have been convicted of a felony, and your application will be '
         'reviewed to confirm your eligibility.',
     'According to the Fairfax County Registrar\'s Office, answer as follows:\n- Have you ever been convicted of a felony or judged mentally incapacitated and disqualified to vote? **Mark YES**\n'+
